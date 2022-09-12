@@ -1,2 +1,3 @@
 from .config import * 
-from .spider import DouyinSpider 
+from .initDB import db
+from .helper import s64,getSoup

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head lang="zh">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<title>相左 - 短网址生成器</title>
+	<meta name="robots" content="max-image-preview:large">
+	<meta name="keywords" content="短网址,相左,链接,url,flask,python">
+	<meta name="description" content="基于python的flask框架开发的一款自用短网址生成器">
+	<meta itemprop="image" content="/images/cover.png">
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/markdown.css">
+	<link rel="stylesheet" href="/css/message.min.css">
+	<script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.ztyang.com/js/msg.min.js"></script>
+    <script src="/js/main.js"></script>
+</head>
+<body class="body">
+    <header class="p-2 w-100">
+        <div class="header flex-sb">
+            <div class="logo">
+                <img class="wh-100" src="/images/logo2.svg" alt="相左">
+            </div>
+            <a class="blog" href="https://www.ztyang.com/" target="_blank">博 客</a>
+        </div>
+    </header>
+    <div class="container w-100">
+        <div class="main text-center">
+            <h2 class="title">短网址生成器</h2>
+            <p class="soup p-2">{{ soup["data"]["text"] }}</p>
+            <div class="urlbox mt-4 p-2">
+                <div class="form">
+                    <input class="post-input mr-2 transform" type="text" name="longurl" placeholder="请输入需要转化的长链接">
+                    <div id="submit" class="cursor btn transform">提交</div>
+                </div>
+                <div class="shorturl">
+                    <div class="p-1 result">
+                        <span class="fw600 mr-2">短网址:</span><span id="shortUrl">{{ index }}</span>
+                    </div>
+                    <div class="btns flex-sb">
+                        <textarea id="copy" style="display:none;"></textarea>
+                        <div id="goUrl" class="btn mr-2">访问</div>
+                        <div id="copyUrl" class="btn">复制</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="write" class=""><h2 id="介绍"><span>介绍</span></h2><p><span>一个基于Python-Flask框架开发的短网址生成器，数据库使用python内置的Sqlite3，直接部署即可使用，不需额外再创建数据库。同时提供短网址生成API与心灵毒鸡汤API。</span></p><h2 id="短网址api"><span>短网址API</span></h2><blockquote><ol><li><span>方法: GET</span></li><li><span>接口: http(s)://[域名]/api</span></li></ol></blockquote><figure><table><thead><tr><th><span>参数</span></th><th><span>必选</span></th><th><span>类型</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>url</span></td><td><span>是</span></td><td><span>string</span></td><td><span>需要转换的长链接</span></td></tr></tbody></table></figure><p><span>请求成功返回的数据结构:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="json"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="json"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.4375px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span></span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"code"</span>: <span class="cm-number">200</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"data"</span>: {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string cm-property">"creatTime"</span>: <span class="cm-string">"2022-09-12 15:02:26"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string cm-property">"longUrl"</span>: <span class="cm-string">"https://www.ztyang.com"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string cm-property">"shortID"</span>: <span class="cm-string">"6zTC11"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string cm-property">"shortUrl"</span>: <span class="cm-string">"http://127.0.0.1:5000/6zTC11"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  },</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"msg"</span>: <span class="cm-string">"短链接创建成功!"</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 229px;"></div><div class="CodeMirror-gutters" style="display: none; height: 229px;"></div></div></div></pre><p>&nbsp;</p><h2 id="心灵毒汤api"><span>心灵毒汤API</span></h2><blockquote><ol><li><span>方法: GET,</span></li><li><span>接口: http(s)://[域名]/soup</span></li><li><span>参数: 无</span></li></ol></blockquote><p><span>请求成功返回的数据结构:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="json"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="json"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.4375px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span></span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"code"</span>: <span class="cm-number">200</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"data"</span>: {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string cm-property">"id"</span>: <span class="cm-number">432</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string cm-property">"text"</span>: <span class="cm-string">"遇到闪电记得要微笑，因为那是天空在给你拍照。"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 160px;"></div><div class="CodeMirror-gutters" style="display: none; height: 160px;"></div></div></div></pre><p>&nbsp;</p></div>
+    <footer class="footer p-2 flex-sb">
+        <div>Copyright © {{ year }} · 相左</div>
+        <a class="flex-center disbl fs-1 text-color beian" href="https://beian.miit.gov.cn/" target="_blank">黔ICP备19012043号-4</a>
+    </footer>
+</body>
+</html>
