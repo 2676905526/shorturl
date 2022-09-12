@@ -8,7 +8,7 @@ api = Blueprint('api', __name__)
 
 
 @api.route('/', methods=['GET'])
-def loadmore():
+def swURL():
     # url = request.values.get("url")
     host = f"{urlparse(request.host_url).scheme}s://{urlparse(request.host_url).netloc}/"
     url = urllib.parse.unquote(request.url.split("url=")[-1])
