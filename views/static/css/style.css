@@ -65,6 +65,7 @@ header,.container {
 }
 .logo {
     height: 3rem;
+    width: 7rem;
 }
 .blog {
     font-size: 2rem;
