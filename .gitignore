@@ -1,0 +1,6 @@
+/__pycache__
+/ENV
+/dist
+
+# Editor directories and files
+.vscode
